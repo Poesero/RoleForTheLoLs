@@ -1,14 +1,15 @@
 package model;
 
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
 
@@ -20,7 +21,7 @@ public class Usuario {
     private String userName;
     private String userMail;
 
-    @Nonnull
+
     @OneToMany
     private List<Post> postList = new ArrayList<>();
 }
