@@ -22,6 +22,6 @@ public class Usuario {
     private String userMail;
 
 
-    @OneToMany
+    @OneToMany (mappedBy = "Usuario", cascade = CascadeType.ALL)
     private List<Post> postList = new ArrayList<>();
 }
