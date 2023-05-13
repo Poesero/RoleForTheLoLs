@@ -1,4 +1,4 @@
-package model;
+package com.example.RoleForTheLoLs.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -22,6 +22,6 @@ public class Usuario {
     private String userMail;
 
 
-    @OneToMany (mappedBy = "Usuario", cascade = CascadeType.ALL)
+    @OneToMany (mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Post> postList = new ArrayList<>();
 }

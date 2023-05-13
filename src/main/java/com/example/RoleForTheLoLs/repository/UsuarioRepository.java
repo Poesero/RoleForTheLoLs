@@ -1,6 +1,6 @@
-package repository;
+package com.example.RoleForTheLoLs.repository;
 
-import model.Usuario;
+import com.example.RoleForTheLoLs.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

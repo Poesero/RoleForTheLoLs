@@ -1,17 +1,16 @@
-package service;
+package com.example.RoleForTheLoLs.service;
 
-import model.Usuario;
+import com.example.RoleForTheLoLs.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
-import repository.UsuarioRepository;
+import com.example.RoleForTheLoLs.repository.UsuarioRepository;
 
 import java.util.List;
 
-import static org.springframework.http.HttpStatus.CREATED;
-import static org.springframework.http.HttpStatus.OK;
+import static org.springframework.http.HttpStatus.*;
 
 @Service
 public class UsuarioService {
@@ -23,11 +22,18 @@ public class UsuarioService {
 
 
     public ResponseEntity addUsuario(Usuario u){
-        ur.save(u);
-        return ResponseEntity.status(CREATED).build();
+
+        try {
+            ur.save(u);
+            return ResponseEntity.status(CREATED).build();
+        } catch (Exception e){
+            return ResponseEntity.status(INTERNAL_SERVER_ERROR).build();
+        }
     }
 
-    public List<Usuario> getAll(){return ur.findAll();}
+    public List<Usuario> getAll(){
+        return ur.findAll();
+    }
 
     public ResponseEntity updateUsuario(Integer id, Usuario u) {
         Usuario ut = ur.findById(id).orElseThrow(() -> new HttpClientErrorException(HttpStatus.BAD_REQUEST, "usuario no encontrado"));
@@ -38,8 +44,12 @@ public class UsuarioService {
     }
 
     public ResponseEntity deleteUsuario(Integer id){
-        ur.deleteById(id);
-        return ResponseEntity.status(OK).build();
+        try {
+            ur.deleteById(id);
+            return ResponseEntity.status(OK).build();
+        } catch (Exception e){
+            return ResponseEntity.status(INTERNAL_SERVER_ERROR).build();
+        }
     }
 
     public Usuario getUsuario(Integer id){

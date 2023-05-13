@@ -1,11 +1,11 @@
-package controller;
+package com.example.RoleForTheLoLs.controller;
 
 import jakarta.annotation.Nonnull;
-import model.Usuario;
+import com.example.RoleForTheLoLs.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.UsuarioService;
+import com.example.RoleForTheLoLs.service.UsuarioService;
 
 import java.util.List;
 

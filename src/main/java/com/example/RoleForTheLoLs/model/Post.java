@@ -1,4 +1,4 @@
-package model;
+package com.example.RoleForTheLoLs.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

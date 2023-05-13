@@ -1,6 +1,6 @@
-package repository;
+package com.example.RoleForTheLoLs.repository;
 
-import model.Post;
+import com.example.RoleForTheLoLs.model.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

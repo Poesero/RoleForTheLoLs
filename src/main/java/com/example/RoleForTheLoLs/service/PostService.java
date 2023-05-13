@@ -1,18 +1,20 @@
-package service;
+package com.example.RoleForTheLoLs.service;
 
-import model.Usuario;
-import model.Post;
-import model.UsuarioDTO;
+import com.example.RoleForTheLoLs.model.Usuario;
+import com.example.RoleForTheLoLs.model.Post;
+import com.example.RoleForTheLoLs.model.UsuarioDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.modelmapper.ModelMapper;
-import repository.PostRepository;
-import repository.UsuarioRepository;
+import com.example.RoleForTheLoLs.repository.PostRepository;
+import com.example.RoleForTheLoLs.repository.UsuarioRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.CREATED;
+@Service
 
 public class PostService {
 
