@@ -1,5 +1,6 @@
 package com.example.RoleForTheLoLs.controller;
 
+import com.example.RoleForTheLoLs.model.Post;
 import jakarta.annotation.Nonnull;
 import com.example.RoleForTheLoLs.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class UsuarioController {
     @Autowired
     private UsuarioService us;
 
-    @PostMapping("")
+    @PostMapping("/addPost")
     public ResponseEntity addUsuario(@RequestBody final @Nonnull Usuario u) {return  us.addUsuario(u);
     }
 
@@ -39,4 +40,7 @@ public class UsuarioController {
     public Usuario getUsuario(@PathVariable final @Nonnull Integer id){
        return us.getUsuario(id);
     }
+
+    @GetMapping("/{id}/posts")
+    public List<Post> findPostByUsuarioId(@PathVariable Integer id){ return us.findPostByUsuarioId(id);}
 }

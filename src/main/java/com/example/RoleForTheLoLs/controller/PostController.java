@@ -38,6 +38,11 @@ public class PostController {
         return ps.getAll();
     }
 
+    @GetMapping("/{id}")
+    public Post getPost(@PathVariable final @Nonnull Integer id){
+        return ps.getPost(id);
+    }
+
     @PostMapping("/{id}/delete")
     public ResponseEntity deletePost (@PathVariable final @Nonnull Integer id){
         return ps.deletePost(id);
