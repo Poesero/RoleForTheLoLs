@@ -23,7 +23,7 @@ public class PostController {
         return ps.addPost(p);
     }
 
-    @GetMapping("/{id}/usuarios")
+    @GetMapping("/{id}/usuario")
     public List<UsuarioDTO> findUsuarioByPostId(@PathVariable Integer id){
         return ps.findUsuarioByPostId(id);
     }

@@ -20,6 +20,6 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "usuario_id")
     @JsonIgnore
-    private Usuario usuario;
+    private Usuario usuarioId;
 
 }

@@ -18,7 +18,7 @@ public class UsuarioController {
     @Autowired
     private UsuarioService us;
 
-    @PostMapping("/addPost")
+    @PostMapping("/addUsuario")
     public ResponseEntity addUsuario(@RequestBody final @Nonnull Usuario u) {return  us.addUsuario(u);
     }
 
@@ -41,6 +41,6 @@ public class UsuarioController {
        return us.getUsuario(id);
     }
 
-    @GetMapping("/{id}/posts")
+    @GetMapping("/{id}/user-posts")
     public List<Post> findPostByUsuarioId(@PathVariable Integer id){ return us.findPostByUsuarioId(id);}
 }
