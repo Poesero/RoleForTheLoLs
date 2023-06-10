@@ -21,6 +21,6 @@ public class Usuario {
     private String userMail;
 
 
-    @OneToMany (mappedBy = "usuarioId", cascade = CascadeType.ALL)
+    @OneToMany (fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Post> postList;
 }

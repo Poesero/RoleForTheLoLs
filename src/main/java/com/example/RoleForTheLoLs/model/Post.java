@@ -15,11 +15,13 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String text;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario_Id")
     @JsonIgnore
-    private Usuario usuarioId;
+    private Usuario usuario;
 
 }

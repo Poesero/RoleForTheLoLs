@@ -29,7 +29,6 @@ public class UsuarioService {
 
 
     public ResponseEntity addUsuario(Usuario u){
-
         try {
             ur.save(u);
             return ResponseEntity.status(CREATED).build();

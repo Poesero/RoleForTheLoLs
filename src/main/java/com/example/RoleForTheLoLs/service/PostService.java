@@ -60,7 +60,7 @@ public class PostService {
             post = pr.findById(id).orElseThrow(() -> new HttpClientErrorException(BAD_REQUEST, "Post not found"));
             post.setId(post.getId());
             post.setText(post.getText());
-            post.setUsuarioId(post.getUsuarioId());
+            post.setUsuario(post.getUsuario());
             pr.save(post);
             return ResponseEntity.status(OK).build();
         }catch (Exception e){
