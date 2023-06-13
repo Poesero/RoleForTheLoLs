@@ -1,8 +1,6 @@
 package com.example.RoleForTheLoLs.service;
 
 import com.example.RoleForTheLoLs.model.Post;
-import com.example.RoleForTheLoLs.model.Usuario;
-import com.example.RoleForTheLoLs.model.UsuarioDTO;
 import com.example.RoleForTheLoLs.repository.PostRepository;
 import com.example.RoleForTheLoLs.repository.UsuarioRepository;
 import jakarta.annotation.Nonnull;
@@ -36,6 +34,7 @@ public class PostService {
         return ResponseEntity.status(CREATED).build();
     }
 
+    /*
     public List<UsuarioDTO> findUsuarioByPostId(Integer id) {
         List<Integer> usuarioIdList = pr.findUsuarioByPostid(id);
         List<UsuarioDTO> usuarios = new ArrayList<>();
@@ -45,6 +44,8 @@ public class PostService {
         }
     return usuarios;
     }
+
+     */
 
     public ResponseEntity deletePost(Integer id){
         try {
@@ -72,8 +73,12 @@ public class PostService {
         return pr.findById(id).orElseThrow(() -> new HttpClientErrorException(BAD_REQUEST, "Post not found"));
     }
 
-    public ArrayList<Post> getAll(){
-        return (ArrayList<Post>) pr.findAll();
+    public List<Post> getAll() {
+        List<Post> posts = new ArrayList<>();
+        for (Post p : pr.findAll()) {
+            posts.add(mm.map(p, Post.class));
+        }
+        return posts;
     }
 
 }

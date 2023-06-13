@@ -1,6 +1,5 @@
 package com.example.RoleForTheLoLs.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,7 +20,6 @@ public class Post {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_Id")
-    @JsonIgnore
     private Usuario usuario;
 
 }

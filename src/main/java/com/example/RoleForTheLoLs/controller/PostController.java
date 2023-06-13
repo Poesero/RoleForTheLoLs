@@ -1,12 +1,11 @@
 package com.example.RoleForTheLoLs.controller;
 
-import jakarta.annotation.Nonnull;
 import com.example.RoleForTheLoLs.model.Post;
-import com.example.RoleForTheLoLs.model.UsuarioDTO;
+import com.example.RoleForTheLoLs.service.PostService;
+import jakarta.annotation.Nonnull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.example.RoleForTheLoLs.service.PostService;
 
 import java.util.List;
 
@@ -22,11 +21,13 @@ public class PostController {
     public ResponseEntity addPost(@RequestBody final @Nonnull Post p) {
         return ps.addPost(p);
     }
-
+/*
     @GetMapping("/{id}/usuario")
     public List<UsuarioDTO> findUsuarioByPostId(@PathVariable Integer id){
         return ps.findUsuarioByPostId(id);
     }
+
+ */
 
     @PostMapping("/{id}/update")
     public ResponseEntity updatePost(@PathVariable final @Nonnull Integer id, @RequestBody final  @Nonnull Post p){

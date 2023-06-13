@@ -1,5 +1,6 @@
 package com.example.RoleForTheLoLs.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,5 +23,6 @@ public class Usuario {
 
 
     @OneToMany (fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Post> postList;
 }
