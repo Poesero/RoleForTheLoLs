@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.*;
@@ -74,11 +73,7 @@ public class PostService {
     }
 
     public List<Post> getAll() {
-        List<Post> posts = new ArrayList<>();
-        for (Post p : pr.findAll()) {
-            posts.add(mm.map(p, Post.class));
-        }
-        return posts;
+        return pr.findAll();
     }
 
 }
